@@ -44,12 +44,12 @@ __global__ void calpia(double *pi,double eps) {
     //localSum=1.0;
     //double d;
     while (tid < N) {
-        if(tid % 2 == 0){
-        double numerator = (double)(tid*1.0);
-        //double denominator = (double)((tid ) + 1);
+        //if(tid % 2 == 0){
+        double numerator = (double)(tid*2.0);
+        //double denominator = (double)((numerator ) + 1.0);
         localSum *= ((numerator / (numerator-1.0)) * (numerator / (numerator+1.0 )));
         
-        }
+        //}
         tid += (blockDim.x * gridDim.x);
     }
     
